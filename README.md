@@ -15,6 +15,9 @@ This repository contains a minimal Flask server that proxies a few Binance API e
    ```
    The server listens on port `5000` by default.
 
+The server validates request parameters such as `symbol`, `limit`, and `interval`.
+Invalid values return a `400` response. Basic request logging is enabled.
+
 ## Example Endpoints
 
 - `/binance/ping` – Check connectivity with the Binance API.
