@@ -4,7 +4,7 @@ import requests
 
 BINANCE_API_BASE = os.environ.get('BINANCE_API_BASE', 'https://api.binance.com')
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 @app.route('/binance/ping')
 def binance_ping():
