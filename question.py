@@ -1,4 +1,8 @@
+"""Utility and minimal API to query the Binance REST endpoints."""
+
+from fastapi import FastAPI, HTTPException, Request
 import requests
+
 
 BASE_URL = "https://api.binance.com"
 
@@ -9,6 +13,19 @@ def query_binance(path: str, params=None):
     response = requests.get(url, params=params, timeout=10)
     response.raise_for_status()
     return response.json()
+
+
+app = FastAPI()
+
+
+@app.get("/{path:path}")
+async def proxy_binance(path: str, request: Request):
+    """Proxy GET requests to Binance while preserving query parameters."""
+    try:
+        data = query_binance(f"/{path}", params=request.query_params)
+    except requests.RequestException as exc:  # pragma: no cover - network
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+    return data
 
 
 if __name__ == "__main__":
@@ -26,5 +43,5 @@ if __name__ == "__main__":
     try:
         result = query_binance(endpoint, params=query_params)
         print(result)
-    except Exception as exc:
+    except Exception as exc:  # pragma: no cover - runtime
         print(f"Error querying Binance: {exc}")
