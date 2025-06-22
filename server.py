@@ -11,5 +11,5 @@ def home():
 def get_price(symbol: str):
     return JSONResponse(content={
         "symbol": symbol.upper(),
-        "price": "12345.67"  # valeur fictive
+        "price": "12345.67"  # mock value
     })
