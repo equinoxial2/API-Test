@@ -1,0 +1,9 @@
+requests
+pandas
+pdfplumber
+apscheduler
+python-dotenv
+tenacity
+jsonschema
+fastapi
+httpx
