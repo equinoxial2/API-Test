@@ -1,5 +1,6 @@
 """APScheduler orchestration for crypto data pipeline."""
 import logging
+from logging.handlers import RotatingFileHandler
 from datetime import datetime
 from pathlib import Path
 
@@ -13,9 +14,10 @@ from .flows_parser import parse_monthly_flows
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s %(levelname)s %(name)s:%(lineno)d %(message)s",
                     handlers=[
-                        logging.handlers.RotatingFileHandler(
-                            "pipeline.log", maxBytes=1000000, backupCount=3),
-                        logging.StreamHandler()
+                        RotatingFileHandler(
+                            "pipeline.log", maxBytes=1000000, backupCount=3
+                        ),
+                        logging.StreamHandler(),
                     ])
 
 logger = logging.getLogger(__name__)
