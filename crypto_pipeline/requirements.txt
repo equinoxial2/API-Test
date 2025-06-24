@@ -5,3 +5,5 @@ apscheduler
 python-dotenv
 tenacity
 jsonschema
+fastapi
+httpx

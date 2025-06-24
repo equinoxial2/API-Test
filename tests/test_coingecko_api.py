@@ -1,5 +1,4 @@
 import pandas as pd
-import requests
 import requests_mock
 
 from crypto_pipeline.coingecko_api import fetch_prices
