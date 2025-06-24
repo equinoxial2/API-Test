@@ -4,8 +4,8 @@ from typing import Iterable
 
 import pandas as pd
 
-from .config import COINGECKO_KEY
-from .utils import request_api
+from crypto_pipeline.config import COINGECKO_KEY
+from crypto_pipeline.utils import request_api
 
 logger = logging.getLogger(__name__)
 

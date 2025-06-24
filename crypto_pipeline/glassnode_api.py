@@ -5,8 +5,8 @@ from typing import Any
 
 import pandas as pd
 
-from .config import GLASSNODE_KEY
-from .utils import request_api
+from crypto_pipeline.config import GLASSNODE_KEY
+from crypto_pipeline.utils import request_api
 
 logger = logging.getLogger(__name__)
 

@@ -6,10 +6,10 @@ from pathlib import Path
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-from .glassnode_api import fetch_glassnode_metric
-from .coingecko_api import fetch_prices
-from .sentiment_api import fetch_fear_greed
-from .flows_parser import parse_monthly_flows
+from crypto_pipeline.glassnode_api import fetch_glassnode_metric
+from crypto_pipeline.coingecko_api import fetch_prices
+from crypto_pipeline.sentiment_api import fetch_fear_greed
+from crypto_pipeline.flows_parser import parse_monthly_flows
 
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s %(levelname)s %(name)s:%(lineno)d %(message)s",

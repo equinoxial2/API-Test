@@ -1,7 +1,7 @@
 """Simple FastAPI app exposing a /health endpoint."""
 from fastapi import FastAPI, Header, HTTPException
 
-from .config import TOKEN
+from crypto_pipeline.config import TOKEN
 
 app = FastAPI()
 

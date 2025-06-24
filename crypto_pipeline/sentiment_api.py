@@ -2,7 +2,7 @@
 import logging
 from typing import Dict
 
-from .utils import request_api
+from crypto_pipeline.utils import request_api
 
 logger = logging.getLogger(__name__)
 
