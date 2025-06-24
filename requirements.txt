@@ -3,4 +3,5 @@ uvicorn
 python-dotenv
 flask
 requests
+requests_mock
 
